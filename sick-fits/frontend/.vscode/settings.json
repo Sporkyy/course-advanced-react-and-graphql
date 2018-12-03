@@ -1,0 +1,21 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "search.exclude": {
+    "**/static": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#000",
+    "titleBar.inactiveForeground": "#000000CC",
+    "titleBar.activeBackground": "#FFC600",
+    "titleBar.inactiveBackground": "#FFC600CC"
+  },
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)"
+}
