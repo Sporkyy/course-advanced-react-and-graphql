@@ -1,15 +1,12 @@
-![Advanced React + GraphQL](https://advancedreact.com/images/ARG/arg-facebook-share.png)
+# Courses Completed
 
-# Advanced React + GraphQL
-
-These are the starter files and stepped solutions for the [Advanced React and GraphQL](https://AdvancedReact.com) course by Wes Bos. 
-
-## Getting Help
-
-The best place to get help is in the #advanced-react slack room - there is a link in your course dashboard. 
-
-
-## FAQ
-
-**Q:** Which Extensions for VS Code is Wes using?
-**A:** All my extensions are listed on my dotfiles repo → https://github.com/wesbos/dotfiles but specifically this course uses [ESLint](https://github.com/Microsoft/vscode-eslint), [Prettier](https://github.com/prettier/prettier-vscode)
+- [x] Module 1: Introduction and Setup
+- [x] Module 2: CSS and Styled Components
+- [x] Module 3: Server Side GraphQL
+- [x] Module 4: Client Side GraphQL
+- [ ] Module 5: Accounts, Authentication and Permissions
+- [ ] Module 6: Shopping Cart
+- [ ] Module 7: Advanced UI and Code Quality
+- [ ] Module 8: Credit Card Checkout
+- [ ] Module 9: Testing
+- [ ] Module 10: Deployment
