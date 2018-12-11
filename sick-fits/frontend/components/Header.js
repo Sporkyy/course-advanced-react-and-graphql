@@ -37,7 +37,7 @@ const StyledHeader = styled.header`
   .bar {
     border-bottom: 10px solid ${props => props.theme.black};
     display: grid;
-    grid-template-columns: 1 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: stretch;
     @media (max-width: 1300px) {
