@@ -6,11 +6,22 @@ const { transport, makeANiceEmail } = require("../mail");
 
 const Mutations = {
   async createItem(parent, args, ctx, info) {
-    // TODO: Check if they are logged in
+    // Check if they are logged in
+    if (!ctx.request.userId) {
+      throw new Error("You must be logged in to do that!");
+    }
+
+    console.log(ctx.request.userId);
 
     const item = await ctx.db.mutation.createItem(
       {
         data: {
+          // This is how we create a relationship between the item and the user
+          user: {
+            connect: {
+              id: ctx.request.userId
+            }
+          },
           ...args
         }
       },
@@ -65,7 +76,7 @@ const Mutations = {
     // We set the JWT as a cookie on the response
     ctx.response.cookie("token", token, {
       httpOnly: true,
-      maxAge: 1000 * 60 * 24 * 365 // 1-year cookie
+      maxAge: 1000 * 60 * 60 * 24 * 365 // 1-year cookie
     });
     // Finalllllly we return the user to the browser
     return user;
@@ -86,7 +97,7 @@ const Mutations = {
     // 4. Set the cookie with the token
     ctx.response.cookie("token", token, {
       httpOnly: true,
-      maxAge: 1000 * 60 * 24 * 365 // 1-year cookie
+      maxAge: 1000 * 60 * 60 * 24 * 365 // 1-year cookie
     });
     // 5. Return the user
     return user;
