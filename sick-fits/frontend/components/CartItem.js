@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import formatMoney from '../lib/formatMoney';
+import RemoveFromCart from './RemoveFromCart';
 
 const CartItemStyles = styled.li`
   align-items: center;
@@ -38,6 +39,7 @@ export default class CartItem extends Component {
             <em>{cartItem.quantity}</em> &times; {formatMoney(cartItem.item.price)} each
           </p>
         </div>
+        <RemoveFromCart id={cartItem.id} />
       </CartItemStyles>
     );
   }
