@@ -8,8 +8,9 @@
 - [ ] Module 6: Shopping Cart
   - [x] Video 38 (2019-01-23)
   - [x] Video 39 (2019-01-23)
-  - [ ] Video 40
-  - [ ] Video 41
+  - [x] Video 40 (2019-02-11)
+  - [x] Video 41 (2019-02-12)
+  - [ ] Video 42
   - [ ] Video 43
   - [ ] Video 44
   - [ ] Video 45

@@ -1,11 +1,12 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "next/link";
-import Title from "./styles/Title";
-import ItemStyles from "./styles/ItemStyles";
-import PriceTag from "./styles/PriceTag";
-import formatMoney from "../lib/formatMoney";
-import DeleteItem from "../components/DeleteItem";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
+import Title from './styles/Title';
+import ItemStyles from './styles/ItemStyles';
+import PriceTag from './styles/PriceTag';
+import formatMoney from '../lib/formatMoney';
+import AddToCart from '../components/AddToCart';
+import DeleteItem from '../components/DeleteItem';
 
 export default class Item extends Component {
   static propTypes = {
@@ -20,7 +21,7 @@ export default class Item extends Component {
         <Title>
           <Link
             href={{
-              pathname: "/item",
+              pathname: '/item',
               query: { id: item.id }
             }}
           >
@@ -29,16 +30,16 @@ export default class Item extends Component {
         </Title>
         <PriceTag>{formatMoney(item.price)}</PriceTag>
         <p>{item.description}</p>
-        <div className="button-list">
+        <div className="buttonList">
           <Link
             href={{
-              pathname: "update",
+              pathname: 'update',
               query: { id: item.id }
             }}
           >
             <a>Edit ✏</a>
           </Link>
-          <button>Add To Cart</button>
+          <AddToCart id={item.id} />
           <DeleteItem id={item.id}>Delete This Item</DeleteItem>
         </div>
       </ItemStyles>
