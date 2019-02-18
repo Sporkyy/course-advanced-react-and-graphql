@@ -11,8 +11,8 @@
   - [x] Video 40 (2019-02-11)
   - [x] Video 41 (2019-02-12)
   - [x] Video 42 (2019-02-13)
-  - [ ] Video 43
-  - [ ] Video 44
+  - [x] Video 43 (2019-02-14)
+  - [x] Video 44 (2019-02-18)
   - [ ] Video 45
 - [ ] Module 7: Advanced UI and Code Quality
 - [ ] Module 8: Credit Card Checkout
