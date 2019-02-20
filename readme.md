@@ -15,6 +15,9 @@
   - [x] Video 44 (2019-02-18)
   - [x] Video 45 (2019-02-19)
 - [ ] Module 7: Advanced UI and Code Quality
+  - [x] Video 46 (2019-02-20)
+  - [ ] Video 47
+  - [ ] Video 48
 - [ ] Module 8: Credit Card Checkout
 - [ ] Module 9: Testing
 - [ ] Module 10: Deployment
