@@ -19,5 +19,10 @@
   - [x] Video 47 (2019-02-21)
   - [x] Video 48 (2019-02-22)
 - [ ] Module 8: Credit Card Checkout
+  - [x] Video 49 (2019-02-25)
+  - [ ] Video 50
+  - [ ] Video 51
+  - [ ] Video 52
+  - [ ] Video 53
 - [ ] Module 9: Testing
 - [ ] Module 10: Deployment
