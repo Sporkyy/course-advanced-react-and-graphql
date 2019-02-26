@@ -20,7 +20,7 @@
   - [x] Video 48 (2019-02-22)
 - [ ] Module 8: Credit Card Checkout
   - [x] Video 49 (2019-02-25)
-  - [ ] Video 50
+  - [x] Video 50 (2019-02-26)
   - [ ] Video 51
   - [ ] Video 52
   - [ ] Video 53
