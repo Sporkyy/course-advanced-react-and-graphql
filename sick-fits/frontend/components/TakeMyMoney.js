@@ -26,17 +26,18 @@ const CREATE_ORDER_MUTATION = gql`
 const totalItems = cart => cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
 export default class TakeMyMoney extends Component {
-  onToken = (res, createOrder) => {
+  onToken = async (res, createOrder) => {
     console.log('onToken called');
     console.log(res.id);
     // Manually call the mutation after receiving Stripe token
-    createOrder({
+    const order = createOrder({
       variables: {
         token: res.id
       }
     }).catch(err => {
       alert(err.message);
     });
+    console.log(order);
   };
   render() {
     return (
@@ -51,7 +52,7 @@ export default class TakeMyMoney extends Component {
                 amount={calcTotalPrice(me.cart)}
                 name="Sick Fits!"
                 description={`Order of ${totalItems(me.cart)} items`}
-                image={me.cart[0].item && me.cart[0].item.image}
+                image={me.cart.length && me.cart[0].item && me.cart[0].item.image}
                 stripeKey="pk_test_OrFSd0p64Z856Lc5TvMUqjWP"
                 currency="USD"
                 email={me.email}

@@ -8,7 +8,7 @@ const stripe = require('../stripe');
 
 const Mutations = {
   async createItem(parent, args, ctx, info) {
-    // Check if they are logged in
+    // Check user authentication
     if (!ctx.request.userId) {
       throw new Error('You must be logged in to do that!');
     }
@@ -58,7 +58,7 @@ const Mutations = {
       ['ADMIN', 'ITEMDELETE'].includes(permission)
     );
 
-    if (!(isItemOwner || hasPermissions)) {
+    if (!isItemOwner && !hasPermissions) {
       throw new Error("You don't have permission to do that");
     }
     // 3. Delete it!
@@ -270,7 +270,7 @@ const Mutations = {
     // 1.5 Ensure an item was found
     if (!cartItem) throw new Error('No CartItem Found!');
     // 2. Ensure user owns the cart item
-    if (ctx.request.userId !== cartItem.user.id) {
+    if (cartItem.user.id !== ctx.request.userId) {
       throw new Error("Nope, sorry! You don't own that.");
     }
     // 3. Delete the cart item
@@ -305,6 +305,7 @@ const Mutations = {
             id
             description
             image
+            largeImage
           }
         }
       }`
@@ -322,9 +323,29 @@ const Mutations = {
       source: args.token
     });
     // 4. Convert CartItems to OrderItems
+    const orderItems = user.cart.map(cartItem => {
+      const orderItem = {
+        ...cartItem.item,
+        quantity: cartItem.quantity,
+        user: { connect: { id: userId } }
+      };
+      delete orderItem.id;
+      return orderItem;
+    });
     // 5. Create Order
+    const order = await ctx.db.mutation.createOrder({
+      data: {
+        total: charge.amount,
+        charge: charge.id,
+        items: { create: orderItems },
+        user: { connect: { id: userId } }
+      }
+    });
     // 6. Clean up: cart (delete CartItems)
+    const cartItemIds = user.cart.map(cartItem => cartItem.id);
+    await ctx.db.mutation.deleteManyCartItems({ where: { id_in: cartItemIds } });
     // 7. Return Order to client
+    return order;
   }
 };
 
