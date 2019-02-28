@@ -27,17 +27,21 @@ const totalItems = cart => cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
 export default class TakeMyMoney extends Component {
   onToken = async (res, createOrder) => {
+    NProgress.start();
     console.log('onToken called');
     console.log(res.id);
     // Manually call the mutation after receiving Stripe token
-    const order = createOrder({
+    const order = await createOrder({
       variables: {
         token: res.id
       }
     }).catch(err => {
       alert(err.message);
     });
-    console.log(order);
+    Router.push({
+      pathname: '/order',
+      query: { id: order.data.createOrder.id }
+    });
   };
   render() {
     return (
