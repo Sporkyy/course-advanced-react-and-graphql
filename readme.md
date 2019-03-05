@@ -27,7 +27,7 @@
 - [ ] Module 9: Testing
   - [x] Video 54 (2019-03-04)
   - [x] Video 55 (2019-03-04)
-  - [ ] Video 56
+  - [x] Video 56 (2019-03-05)
   - [ ] Video 57
   - [ ] Video 58
   - [ ] Video 59
