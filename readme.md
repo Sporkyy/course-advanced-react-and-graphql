@@ -29,10 +29,10 @@
   - [x] Video 55 (2019-03-04)
   - [x] Video 56 (2019-03-05)
   - [x] Video 57 (2019-03-07)
-  - [ ] Video 58
-  - [ ] Video 59
-  - [ ] Video 60
-  - [ ] Video 61
+  - [x] Video 58 (2019-03-15)
+  - [x] Video 59 (2019-03-18)
+  - [x] Video 60 (2019-03-19)
+  - [x] Video 61 (2019-03-20)
   - [ ] Video 62
   - [ ] Video 63
   - [ ] Video 64

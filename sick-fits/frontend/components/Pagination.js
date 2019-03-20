@@ -1,10 +1,10 @@
-import React from "react";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
-import Head from "next/head";
-import Link from "next/link";
-import { perPage } from "../config";
-import PaginationStyles from "./styles/PaginationStyles";
+import React from 'react';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import Head from 'next/head';
+import Link from 'next/link';
+import { perPage } from '../config';
+import PaginationStyles from './styles/PaginationStyles';
 
 const PAGINATION_QUERY = gql`
   query PAGINATION_QUERY {
@@ -24,7 +24,7 @@ const Pagination = ({ page }) => {
         const count = data.itemsConnection.aggregate.count;
         const pages = Math.ceil(count / perPage);
         return (
-          <PaginationStyles>
+          <PaginationStyles data-test="pagination">
             <Head>
               <title>
                 Sick Fits! 〰 Page {page} of {pages}
@@ -33,7 +33,7 @@ const Pagination = ({ page }) => {
             <Link
               prefetch
               href={{
-                pathname: "items",
+                pathname: 'items',
                 query: { page: page - 1 }
               }}
             >
@@ -42,13 +42,14 @@ const Pagination = ({ page }) => {
               </a>
             </Link>
             <p>
-              Page {page} of {pages}!
+              Page {page} of
+              <span className="totalPages">{pages}</span>!
             </p>
             <p>{count} Items total</p>
             <Link
               prefetch
               href={{
-                pathname: "items",
+                pathname: 'items',
                 query: { page: page + 1 }
               }}
             >
@@ -64,3 +65,4 @@ const Pagination = ({ page }) => {
 };
 
 export default Pagination;
+export { PAGINATION_QUERY };
