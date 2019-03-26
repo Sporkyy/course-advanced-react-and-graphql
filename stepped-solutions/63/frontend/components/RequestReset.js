@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
-import ErrorMessage from './ErrorMessage';
-import { CURRENT_USER_QUERY } from './User';
+import Error from './ErrorMessage';
 
 const REQUEST_RESET_MUTATION = gql`
   mutation REQUEST_RESET_MUTATION($email: String!) {
@@ -15,7 +14,7 @@ const REQUEST_RESET_MUTATION = gql`
 
 class RequestReset extends Component {
   state = {
-    email: ''
+    email: '',
   };
   saveToState = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -35,8 +34,8 @@ class RequestReset extends Component {
           >
             <fieldset disabled={loading} aria-busy={loading}>
               <h2>Request a password reset</h2>
-              <ErrorMessage error={error} />
-              {!error && !loading && called && <p>Success! Check your email for a reset link.</p>}
+              <Error error={error} />
+              {!error && !loading && called && <p>Success! Check your email for a reset link!</p>}
               <label htmlFor="email">
                 Email
                 <input
@@ -47,8 +46,9 @@ class RequestReset extends Component {
                   onChange={this.saveToState}
                 />
               </label>
+
+              <button type="submit">Request Reset!</button>
             </fieldset>
-            <button type="submit">Request Reset!</button>
           </Form>
         )}
       </Mutation>
