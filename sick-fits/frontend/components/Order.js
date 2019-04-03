@@ -41,7 +41,7 @@ export default class Order extends Component {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
           return (
-            <OrderStyles>
+            <OrderStyles data-test="order">
               <Head>
                 <title>Sick Fits - Order {order.id}</title>
               </Head>
@@ -86,3 +86,5 @@ export default class Order extends Component {
     );
   }
 }
+
+export { SINGLE_ORDER_QUERY };

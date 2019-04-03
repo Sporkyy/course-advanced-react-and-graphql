@@ -43,9 +43,9 @@ describe('<Nav/>', () => {
     );
     await wait();
     wrapper.update();
-    console.log(wrapper.debug());
+    // console.log(wrapper.debug());
     const nav = wrapper.find('ul[data-test="nav"]');
-    console.log(nav.debug());
+    // console.log(nav.debug());
     expect(toJSON(nav)).toMatchSnapshot();
   });
 
@@ -58,7 +58,7 @@ describe('<Nav/>', () => {
     await wait();
     wrapper.update();
     const nav = wrapper.find('ul[data-test="nav"]');
-    console.log(nav.debug());
+    // console.log(nav.debug());
     expect(nav.children().length).toBe(6);
     expect(nav.text()).toContain('Sign Out');
     // expect(toJSON(nav)).toMatchSnapshot();
@@ -75,7 +75,7 @@ describe('<Nav/>', () => {
     const nav = wrapper.find('ul[data-test="nav"]');
     // console.log(nav.debug());
     const count = nav.find('div.count');
-    console.log(count.debug());
+    // console.log(count.debug());
     expect(toJSON(count)).toMatchSnapshot();
   });
 });

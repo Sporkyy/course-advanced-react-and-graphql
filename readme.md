@@ -24,7 +24,7 @@
   - [x] Video 51 (2019-02-27)
   - [x] Video 52 (2019-02-28)
   - [x] Video 53 (2019-03-01)
-- [ ] Module 9: Testing
+- [ ] Module 9: Testing (2019-04-03)
   - [x] Video 54 (2019-03-04)
   - [x] Video 55 (2019-03-04)
   - [x] Video 56 (2019-03-05)
@@ -36,5 +36,5 @@
   - [x] Video 62 (2019-03-26)
   - [x] Video 63 (2019-04-01)
   - [x] Video 64 (2019-04-02)
-  - [ ] Video 65
+  - [x] Video 65 (2019-04-03)
 - [ ] Module 10: Deployment
