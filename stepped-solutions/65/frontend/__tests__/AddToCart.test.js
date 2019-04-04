@@ -6,7 +6,6 @@ import { ApolloConsumer } from 'react-apollo';
 import AddToCart, { ADD_TO_CART_MUTATION } from '../components/AddToCart';
 import { CURRENT_USER_QUERY } from '../components/User';
 import { fakeUser, fakeCartItem } from '../lib/testUtils';
-import { ApolloClient } from 'apollo-boost';
 
 const mocks = [
   {
