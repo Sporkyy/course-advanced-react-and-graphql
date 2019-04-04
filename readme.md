@@ -38,6 +38,6 @@
   - [x] Video 64 (2019-04-02)
   - [x] Video 65 (2019-04-03)
 - [ ] Module 10: Deployment
-  - [ ] Video 66
-  - [ ] Video 67
+  - [x] Video 66 (2019-04-04)
+  - [x] Video 67 (2019-04-04)
   - [ ] Video 68
