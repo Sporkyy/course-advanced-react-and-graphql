@@ -31,8 +31,8 @@ describe('<PleaseSignIn/>', () => {
     expect(wrapper.text()).toContain(
       'Please sign in before continuingSign into Your AccountEmailPasswordSign In!'
     );
-    const SignIn = wrapper.find('SignIn');
-    expect(SignIn.exists()).toBe(true);
+    const Signin = wrapper.find('Signin');
+    expect(Signin.exists()).toBe(true);
   });
 
   it('Renders the child component when the user is authenticated', async () => {

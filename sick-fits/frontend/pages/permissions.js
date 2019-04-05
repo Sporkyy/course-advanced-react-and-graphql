@@ -1,5 +1,5 @@
-import PleaseSignIn from "../components/PleaseSignIn";
-import Permissions from "../components/Permisisons";
+import PleaseSignIn from '../components/PleaseSignIn';
+import Permissions from '../components/Permissions';
 
 const PermissionsPage = props => (
   <div>

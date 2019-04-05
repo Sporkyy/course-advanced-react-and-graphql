@@ -15,7 +15,7 @@ const SIGNIN_MUTATION = gql`
   }
 `;
 
-class SignIn extends Component {
+class Signin extends Component {
   state = {
     name: '',
     password: '',
@@ -63,8 +63,9 @@ class SignIn extends Component {
                   onChange={this.saveToState}
                 />
               </label>
+
+              <button type="submit">Sign In!</button>
             </fieldset>
-            <button type="submit">Sign In!</button>
           </Form>
         )}
       </Mutation>
@@ -72,4 +73,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default Signin;
